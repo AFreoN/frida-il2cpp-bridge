@@ -1,0 +1,17 @@
+{
+  "name": "stumbleguys_frida",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "spawn": "frida -U -f com.nekki.shadowfight -l dist/agent.js",
+    "spawn-debug": "frida -U -f com.nekki.shadowfight -l dist/agent.js > output.txt 2>&1",
+    "watch": "frida-compile src/index.ts -o dist/agent.js -w",
+    "build": "frida-compile src/index.ts -o dist/agent.js -c",
+    "compile": "npx frida-compile src/index.ts -o dist/agent.js",
+    "objection": "objection -g com.nekki.shadowfight explore"
+  },
+  "dependencies": {
+    "frida-il2cpp-bridge": "^0.9.1",
+    "threads": "^1.7.0"
+  }
+}
